@@ -17,35 +17,16 @@ public class Personas implements Serializable {
 
     }
 
-    public int getIdPersona() {
-        return idPersona;
-    }
-
-    public void setIdPersona(int idPersona) {
-        this.idPersona = idPersona;
-    }
-
-    public String getNombrePersona() {
-        return nombrePersona;
-    }
-
-    public void setNombrePersona(String nombrePersona) {
+    public Personas(String nombrePersona, String apellidoPersona, int edadPersona) {
         this.nombrePersona = nombrePersona;
-    }
-
-    public String getApellidoPersona() {
-        return apellidoPersona;
-    }
-
-    public void setApellidoPersona(String apellidoPersona) {
         this.apellidoPersona = apellidoPersona;
+        this.edadPersona = edadPersona;
     }
 
-    public int getEdadPersona() {
-        return edadPersona;
-    }
-
-    public void setEdadPersona(int edadPersona) {
+    public Personas(int idPersona, String nombrePersona, String apellidoPersona, int edadPersona) {
+        this.idPersona = idPersona;
+        this.nombrePersona = nombrePersona;
+        this.apellidoPersona = apellidoPersona;
         this.edadPersona = edadPersona;
     }
 

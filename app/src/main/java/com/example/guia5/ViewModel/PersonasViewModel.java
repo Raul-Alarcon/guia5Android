@@ -54,6 +54,4 @@ public class PersonasViewModel extends AndroidViewModel {
             }
         }).start();
     }
-
-
 }

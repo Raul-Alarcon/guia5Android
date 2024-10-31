@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,15 +39,17 @@ public class AddPerson extends AppCompatActivity {
                 String nombre = etNombre.getText().toString();
                 String apellido = etApellido.getText().toString();
                 int edad = Integer.parseInt(etEdad.getText().toString());
-
+            if (nombre.isEmpty() || apellido.isEmpty() || edad < 0) {
+                Toast.makeText(v.getContext(), "Por favor, completa todos los campos.", Toast.LENGTH_SHORT).show();
+                return;
+            }
                 Personas persona = new Personas();
 
                 persona.nombrePersona = nombre;
                 persona.apellidoPersona = apellido;
                 persona.edadPersona = edad;
-
                 personaViewModel.insertPersona(persona);
-
+                Toast.makeText(v.getContext(), "Persona agregada correctamente", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
